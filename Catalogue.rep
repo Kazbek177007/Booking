@@ -1,1 +1,16 @@
+#include <QtCore>
+
+struct ProductPreview
+{
+    int id;
+    Qstring name;
+    QByteArray icon;
+    double price;
+};
+
+
+class Catalogue
+{
+    PROP(QList<ProductPreview> ProductPreviews);
+};
 
