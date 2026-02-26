@@ -33,5 +33,9 @@ install(TARGETS Client
 
 
 qt6_add_repc_replicas(Client
-    ../Catalogue.rep
+  ../catalogue.rep
+)
+
+target_include_directories(Client PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
 )

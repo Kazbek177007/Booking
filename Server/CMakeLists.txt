@@ -13,6 +13,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects)
 
 add_executable(Server
   main.cpp
+  catalogue.h catalogue.cpp
 )
 
 target_link_libraries(Server PUBLIC
@@ -26,6 +27,11 @@ install(TARGETS Server
 )
 
 
-qt6_add_repc_replicas(Server
-    ../Catalogue.rep
+qt6_add_repc_sources(Server
+  ../catalogue.rep
+)
+
+
+target_include_directories(Server PRIVATE
+    ${CMAKE_CURRENT_BINARY_DIR}
 )
