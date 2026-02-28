@@ -14,9 +14,10 @@ find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects Widgets)
 
 qt_add_executable(Client
   main.cpp
-  widget.cpp
-  widget.h
-  widget.ui
+  catalogue.h catalogue.cpp
+
+
+
 )
 
 target_link_libraries(Client PUBLIC

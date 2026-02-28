@@ -9,6 +9,5 @@ int main(int argc, char *argv[])
     QRemoteObjectHost srcNode(QUrl(QStringLiteral("local:replica")));
     srcNode.enableRemoting(&srcCatalogue);
 
-
     return a.exec();
 }
