@@ -8,6 +8,7 @@ class Catalogue : public CatalogueSimpleSource
     Q_OBJECT
 public:
     Catalogue();
+    void registerClient(QString clientId) override;
 };
 
 

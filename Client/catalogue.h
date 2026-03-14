@@ -10,14 +10,11 @@ class Catalogue : public QWidget
 public:
     explicit Catalogue(QSharedPointer<CatalogueReplica> reptr);
 
+private slots:
+    void redraw();
 
 private:
     QSharedPointer<CatalogueReplica> reptr;
     QVBoxLayout* mainLayout;
-signals:
-
-private slots:
-    void redraw();
-
 };
 

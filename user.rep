@@ -1,0 +1,33 @@
+class Cart
+{
+    PROP(QMap<int, int> items);
+
+    SLOT(void addItem(int id));
+    SLOT(void removeItem(int id));
+    SLOT(void clear());
+};
+
+class UserProfile 
+{
+    PROP(QString name);
+    PROP(QString lastName);
+    PROP(QString email)
+    PROP(QString phoneNumber);
+};
+
+class OrderHistory
+{
+
+
+};
+
+
+class Notifications
+{
+
+
+};
+
+
+
+

@@ -29,6 +29,7 @@ install(TARGETS Server
 
 qt6_add_repc_sources(Server
   ../catalogue.rep
+  ../user.rep
 )
 
 
