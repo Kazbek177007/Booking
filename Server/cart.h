@@ -9,8 +9,9 @@ class Cart : public CartSimpleSource
     Q_OBJECT
 public:
     explicit Cart(QObject *parent = nullptr);
-
-signals:
+    void addItem(int id) override;
+    void removeItem(int id) override;
+    void clear() override;
 };
 
 #endif // CART_H

@@ -7,7 +7,7 @@ class Catalogue : public CatalogueSimpleSource
 {
     Q_OBJECT
 public:
-    Catalogue();
+    Catalogue(QObject* parent = nullptr);
     void registerClient(QString clientId) override;
 };
 

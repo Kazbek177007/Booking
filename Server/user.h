@@ -12,9 +12,10 @@ class User : public QObject
 {
     Q_OBJECT
 public:
-    explicit User(QObject *parent = nullptr);
+    explicit User(QString id, QObject *parent = nullptr);
 
 private:
+    QString id;
     Cart* cart;
     UserProfile* userProfile;
     OrderHistory* orderHistory;

@@ -12,10 +12,15 @@ public:
     Server(int &argc, char **argv);
 
     static Server* instanse();
+    QRemoteObjectHost* getrpc(){return rpc;}
 
 private:
+    QRemoteObjectHost* rpc;
     UserManager* userManager;
     Catalogue* catalogue;
-    QRemoteObjectHost* rpc;
+
+signals:
+    void userConnected(QString userId);
+
 };
 

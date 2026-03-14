@@ -13,6 +13,9 @@ public:
 private:
     QMap<QString, User*> users;
 
+public slots:
+    void addUser(QString userId);
+
 };
 
 #endif // USERMANAGER_H
