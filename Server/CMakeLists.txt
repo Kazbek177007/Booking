@@ -14,6 +14,13 @@ find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects)
 add_executable(Server
   main.cpp
   catalogue.h catalogue.cpp
+  server.h server.cpp
+  usermanager.h usermanager.cpp
+  user.h user.cpp
+  cart.h cart.cpp
+  userprofile.h userprofile.cpp
+  orderhistory.h orderhistory.cpp
+  notifications.h notifications.cpp
 )
 
 target_link_libraries(Server PUBLIC
