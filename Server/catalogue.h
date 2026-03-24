@@ -2,7 +2,6 @@
 #include <QObject>
 #include "rep_catalogue_source.h"
 
-
 class Catalogue : public CatalogueSimpleSource
 {
     Q_OBJECT

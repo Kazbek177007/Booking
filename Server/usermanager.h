@@ -1,6 +1,4 @@
-#ifndef USERMANAGER_H
-#define USERMANAGER_H
-
+#pragma once
 #include "user.h"
 #include <QObject>
 
@@ -18,4 +16,3 @@ public slots:
 
 };
 
-#endif // USERMANAGER_H

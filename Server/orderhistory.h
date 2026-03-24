@@ -1,6 +1,4 @@
-#ifndef ORDERHISTORY_H
-#define ORDERHISTORY_H
-
+#pragma once
 #include <QObject>
 #include <rep_user_source.h>
 
@@ -12,5 +10,3 @@ public:
 
 signals:
 };
-
-#endif // ORDERHISTORY_H

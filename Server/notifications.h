@@ -1,6 +1,4 @@
-#ifndef NOTIFICATIONS_H
-#define NOTIFICATIONS_H
-
+#pragma once
 #include <QObject>
 #include <rep_user_source.h>
 
@@ -13,4 +11,3 @@ public:
 signals:
 };
 
-#endif // NOTIFICATIONS_H

@@ -1,11 +1,8 @@
-#ifndef USER_H
-#define USER_H
-
+#pragma once
 #include "cart.h"
 #include "notifications.h"
 #include "orderhistory.h"
 #include "userprofile.h"
-
 #include <QObject>
 
 class User : public QObject
@@ -24,4 +21,3 @@ private:
     void registerSources();
 };
 
-#endif // USER_H

@@ -1,6 +1,4 @@
-#ifndef USERPROFILE_H
-#define USERPROFILE_H
-
+#pragma once
 #include <QObject>
 #include <rep_user_source.h>
 
@@ -13,4 +11,3 @@ public:
 signals:
 };
 
-#endif // USERPROFILE_H

@@ -1,6 +1,4 @@
-#ifndef CART_H
-#define CART_H
-
+#pragma once
 #include <QObject>
 #include "rep_user_source.h"
 
@@ -14,4 +12,3 @@ public:
     void clear() override;
 };
 
-#endif // CART_H
