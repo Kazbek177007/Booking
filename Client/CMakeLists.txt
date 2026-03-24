@@ -15,8 +15,10 @@ find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects Widgets)
 qt_add_executable(Client
   main.cpp
   client.h client.cpp
-
-
+  mainwindow.h mainwindow.cpp mainwindow.ui
+  cataloguewidget.h cataloguewidget.cpp cataloguewidget.ui
+  userprofilewidget.h userprofilewidget.cpp userprofilewidget.ui
+  cartwidget.h cartwidget.cpp cartwidget.ui
 
 )
 
