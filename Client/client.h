@@ -9,12 +9,12 @@ class Client : public QApplication
     Q_OBJECT
 public:
     Client(int& argc, char** argv);
-    Client* instanse(){return static_cast<Client*>(QApplication::instance());}
+    static Client* instanse(){return static_cast<Client*>(QApplication::instance());}
+    QSharedPointer<CatalogueReplica> catalogue;
     //login(),
 
 private:
     QRemoteObjectNode rpc;
-    QSharedPointer<CatalogueReplica> catalogue;
     QSharedPointer<CartReplica> cart;
     QSharedPointer<UserProfileReplica> userProfile;
     QSharedPointer<OrderHistoryReplica> orderHistory;

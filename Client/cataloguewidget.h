@@ -2,6 +2,8 @@
 #define CATALOGUEWIDGET_H
 
 #include <QScrollArea>
+#include <QVBoxLayout>
+#include <rep_catalogue_replica.h>
 
 namespace Ui {
 class CatalogueWidget;
@@ -17,6 +19,11 @@ public:
 
 private:
     Ui::CatalogueWidget *ui;
+    QVBoxLayout* vBox;
+
+private slots:
+    void updatePreviews(QList<ProductPreview> productPreviews);
+
 };
 
 #endif // CATALOGUEWIDGET_H

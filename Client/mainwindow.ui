@@ -25,7 +25,7 @@
         </sizepolicy>
        </property>
        <property name="text">
-        <string>label</string>
+        <string>catalogue</string>
        </property>
       </widget>
      </item>

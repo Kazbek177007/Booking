@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->addWidget(catalogue);
     ui->stackedWidget->addWidget(cart);
     ui->stackedWidget->addWidget(userProfile);
+    ui->stackedWidget->setCurrentIndex(0);
     connect(ui->catalogueButton, &QPushButton::clicked, this, &MainWindow::showCatalogue);
     connect(ui->cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
     connect(ui->userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
@@ -25,6 +26,7 @@ MainWindow::~MainWindow()
 void MainWindow::showCatalogue()
 {
     ui->stackedWidget->setCurrentWidget(catalogue);
+    qDebug() << catalogue->size();
 }
 
 void MainWindow::showCart()
