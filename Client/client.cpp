@@ -7,3 +7,12 @@ Client::Client(int& argc, char** argv): QApplication(argc, argv)
     qDebug() << "Client is trying to connect";
 }
 
+void Client::login(QString clientId)
+{
+    catalogue->registerClient(clientId);
+    cart.reset(rpc.acquire<CartReplica>(clientId+"/cart"));
+    userProfile.reset(rpc.acquire<UserProfileReplica>(clientId+"/userProfile"));
+    orderHistory.reset(rpc.acquire<OrderHistoryReplica>(clientId+"/orderHistory"));
+    notifications.reset(rpc.acquire<NotificationsReplica>(clientId+"/notifications"));
+}
+

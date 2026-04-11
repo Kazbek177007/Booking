@@ -46,7 +46,7 @@ void MainWindow::showLogin()
 {
     LoginWidget* loginw = new LoginWidget(this);
     connect(loginw, &QDialog::accepted, [loginw](){
-        Client::instance()->catalogue->registerClient(loginw->phoneNumber());
+        Client::instance()->login(loginw->phoneNumber());
     });
     loginw->open();
 }
