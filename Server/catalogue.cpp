@@ -3,7 +3,7 @@
 
 Catalogue::Catalogue(QObject* parent) : CatalogueSimpleSource(parent)
 {
-    Server* s = Server::instanse();
+    Server* s = Server::instance();
     s->getrpc()->enableRemoting(this);
     qDebug() << "server is lauched";
     QFile photo1 ("C:/Users/Руслан/Desktop/png-transparent-football-soccer-sports-ball-game.png");
@@ -16,6 +16,6 @@ Catalogue::Catalogue(QObject* parent) : CatalogueSimpleSource(parent)
 void Catalogue::registerClient(QString clientId)
 {
     qDebug() <<"New login with Id: " << clientId;
-    Server* s = Server::instanse();
+    Server* s = Server::instance();
     emit s->userConnected(clientId);
 }

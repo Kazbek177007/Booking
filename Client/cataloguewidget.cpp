@@ -16,7 +16,7 @@ CatalogueWidget::CatalogueWidget(QWidget *parent)
     widget->setLayout(vBox);
     setWidgetResizable(true);
     qDebug() << "CatalogueWidget is created";
-    connect(Client::instanse()->catalogue.get(), &CatalogueReplica::productPreviewsChanged, this, &CatalogueWidget::updatePreviews);
+    connect(Client::instance()->catalogue.get(), &CatalogueReplica::productPreviewsChanged, this, &CatalogueWidget::updatePreviews);
 }
 
 CatalogueWidget::~CatalogueWidget()

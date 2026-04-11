@@ -5,7 +5,7 @@
 UserManager::UserManager(QObject *parent)
     : QObject{parent}
 {
-    connect(Server::instanse(), &Server::userConnected, this, &UserManager::addUser);
+    connect(Server::instance(), &Server::userConnected, this, &UserManager::addUser);
 }
 
 void UserManager::addUser(QString userId)

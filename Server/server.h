@@ -11,7 +11,7 @@ class Server : public QCoreApplication
 public:
     Server(int &argc, char **argv);
 
-    static Server* instanse();
+    static Server* instance();
     QRemoteObjectHost* getrpc(){return rpc;}
 
 private:

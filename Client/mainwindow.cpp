@@ -1,3 +1,5 @@
+#include "client.h"
+#include "loginwidget.h"
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
@@ -16,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->catalogueButton, &QPushButton::clicked, this, &MainWindow::showCatalogue);
     connect(ui->cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
     connect(ui->userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::showLogin);
 }
 
 MainWindow::~MainWindow()
@@ -37,4 +40,13 @@ void MainWindow::showCart()
 void MainWindow::showUserProfile()
 {
     ui->stackedWidget->setCurrentWidget(userProfile);
+}
+
+void MainWindow::showLogin()
+{
+    LoginWidget* loginw = new LoginWidget(this);
+    connect(loginw, &QDialog::accepted, [loginw](){
+        Client::instance()->catalogue->registerClient(loginw->phoneNumber());
+    });
+    loginw->open();
 }

@@ -10,7 +10,7 @@ User::User(QString id,QObject *parent)
     orderHistory(new OrderHistory(this)),
     notifications(new Notifications(this))
 {
-    Server* s = Server::instanse();
+    Server* s = Server::instance();
     s->getrpc()->enableRemoting(cart, id+"/cart");
     s->getrpc()->enableRemoting(userProfile, id+"/userProfile");
     s->getrpc()->enableRemoting(orderHistory, id+"/orderHistory");

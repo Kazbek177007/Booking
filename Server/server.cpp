@@ -8,7 +8,7 @@ Server::Server(int &argc, char **argv):QCoreApplication(argc, argv),
 
 }
 
-Server* Server::instanse()
+Server* Server::instance()
 {
     return static_cast<Server*>(QCoreApplication::instance());
 }
