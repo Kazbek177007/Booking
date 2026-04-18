@@ -6,7 +6,7 @@ class UserProfile : public UserProfileSimpleSource
 {
     Q_OBJECT
 public:
-    explicit UserProfile(QObject *parent = nullptr);
+    explicit UserProfile(QString clientId, QObject *parent = nullptr);
 
 signals:
 };

@@ -6,7 +6,7 @@ class OrderHistory : public OrderHistorySimpleSource
 {
     Q_OBJECT
 public:
-    explicit OrderHistory(QObject *parent = nullptr);
+    explicit OrderHistory(QString clientId, QObject *parent = nullptr);
 
 signals:
 };

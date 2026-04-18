@@ -1,5 +1,5 @@
 #include "orderhistory.h"
 
-OrderHistory::OrderHistory(QObject *parent)
+OrderHistory::OrderHistory(QString clientId, QObject *parent)
     : OrderHistorySimpleSource{parent}
 {}

@@ -10,6 +10,11 @@ UserManager::UserManager(QObject *parent)
 
 void UserManager::addUser(QString userId)
 {
+    if (users.contains(userId))
+    {
+        qWarning() << "User with Id" << userId << "is existing";
+        return;
+    }
     User* user = new User(userId,this);
     users[userId] = user;
     qDebug() << "User added to UserManager" << userId;

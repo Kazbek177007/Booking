@@ -1,5 +1,5 @@
 #include "userprofile.h"
 
-UserProfile::UserProfile(QObject *parent)
+UserProfile::UserProfile(QString clientId, QObject *parent)
     : UserProfileSimpleSource{parent}
 {}

@@ -1,3 +1,4 @@
+#include "client.h"
 #include "productpreviewwidget.h"
 #include "ui_productpreviewwidget.h"
 
@@ -12,6 +13,9 @@ ProductPreviewWidget::ProductPreviewWidget(ProductPreview productPreview)
     ui->productName->setText(productPreview.name());
     ui->productPrice->setText(QString::number(productPreview.price()));
     qDebug() << productPreview;
+    connect(ui->addProductButton, &QPushButton::clicked, [productPreview](){
+        Client::instance()->cart->addItem(productPreview.id());
+    });
 }
 
 ProductPreviewWidget::~ProductPreviewWidget()

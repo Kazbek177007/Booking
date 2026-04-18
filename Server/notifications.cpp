@@ -1,5 +1,5 @@
 #include "notifications.h"
 
-Notifications::Notifications(QObject *parent)
+Notifications::Notifications(QString clientId, QObject *parent)
     : NotificationsSimpleSource{parent}
 {}

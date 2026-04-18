@@ -6,9 +6,13 @@ class Cart : public CartSimpleSource
 {
     Q_OBJECT
 public:
-    explicit Cart(QObject *parent = nullptr);
+    explicit Cart(QString clientId, QObject *parent = nullptr);
     void addItem(int id) override;
     void removeItem(int id) override;
     void clear() override;
+
+private:
+    QString clientId;
+
 };
 

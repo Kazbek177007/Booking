@@ -5,10 +5,10 @@
 User::User(QString id,QObject *parent)
     : QObject{parent},
     id(id),
-    cart(new Cart(this)),
-    userProfile(new UserProfile(this)),
-    orderHistory(new OrderHistory(this)),
-    notifications(new Notifications(this))
+    cart(new Cart(id,this)),
+    userProfile(new UserProfile(id,this)),
+    orderHistory(new OrderHistory(id,this)),
+    notifications(new Notifications(id,this))
 {
     Server* s = Server::instance();
     s->getrpc()->enableRemoting(cart, id+"/cart");

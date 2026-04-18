@@ -9,16 +9,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     catalogue = new CatalogueWidget;
-    cart = new CartWidget;
-    userProfile = new UserProfileWidget;
     ui->stackedWidget->addWidget(catalogue);
-    ui->stackedWidget->addWidget(cart);
-    ui->stackedWidget->addWidget(userProfile);
     ui->stackedWidget->setCurrentIndex(0);
     connect(ui->catalogueButton, &QPushButton::clicked, this, &MainWindow::showCatalogue);
-    connect(ui->cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
-    connect(ui->userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
-    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::showLogin);
+    connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::showLoginWidget);
 }
 
 MainWindow::~MainWindow()
@@ -42,11 +36,23 @@ void MainWindow::showUserProfile()
     ui->stackedWidget->setCurrentWidget(userProfile);
 }
 
-void MainWindow::showLogin()
+void MainWindow::showLoginWidget()
 {
     LoginWidget* loginw = new LoginWidget(this);
-    connect(loginw, &QDialog::accepted, [loginw](){
+    connect(loginw, &QDialog::accepted, [loginw, this](){
         Client::instance()->login(loginw->phoneNumber());
+        cart = new CartWidget;
+        userProfile = new UserProfileWidget;
+        ui->stackedWidget->addWidget(cart);
+        ui->stackedWidget->addWidget(userProfile);
+        QPushButton* cartButton = new QPushButton("Cart");
+        QPushButton* userProfileButton = new QPushButton("User Profile");
+        ui->horizontalLayout->addWidget(cartButton);
+        ui->horizontalLayout->addWidget(userProfileButton);
+        connect(cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
+        connect(userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
+        ui->loginButton->hide();
     });
     loginw->open();
+
 }

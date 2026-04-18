@@ -6,7 +6,7 @@ class Notifications : public NotificationsSimpleSource
 {
     Q_OBJECT
 public:
-    explicit Notifications(QObject *parent = nullptr);
+    explicit Notifications(QString clientId, QObject *parent = nullptr);
 
 signals:
 };

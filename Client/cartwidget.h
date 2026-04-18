@@ -17,6 +17,9 @@ public:
 
 private:
     Ui::CartWidget *ui;
+
+private slots:
+    void updateCart();
 };
 
 #endif // CARTWIDGET_H

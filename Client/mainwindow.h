@@ -24,7 +24,7 @@ private slots:
     void showCatalogue();
     void showCart();
     void showUserProfile();
-    void showLogin();
+    void showLoginWidget();
 
 private:
     Ui::MainWindow* ui;
