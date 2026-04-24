@@ -21,6 +21,7 @@ qt_add_executable(Client
   cartwidget.h cartwidget.cpp cartwidget.ui
   productpreviewwidget.h productpreviewwidget.cpp productpreviewwidget.ui
   loginwidget.h loginwidget.cpp loginwidget.ui
+  cartproductpreview.h cartproductpreview.cpp cartproductpreview.ui
 
 
 

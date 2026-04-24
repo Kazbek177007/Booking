@@ -13,4 +13,12 @@ Server* Server::instance()
     return static_cast<Server*>(QCoreApplication::instance());
 }
 
+ProductPreview Server::productPreview(int id) const
+{
+    auto tempList = catalogue->productPreviews();
+    for (auto i : tempList)
+        if(i.id() == id) return i;
+    return productPreview(-1);
+}
+
 

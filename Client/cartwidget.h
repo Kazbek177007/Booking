@@ -13,13 +13,14 @@ class CartWidget : public QWidget
 
 public:
     explicit CartWidget(QWidget *parent = nullptr);
+    void updateCart();
     ~CartWidget();
 
 private:
     Ui::CartWidget *ui;
 
 private slots:
-    void updateCart();
+
 };
 
 #endif // CARTWIDGET_H

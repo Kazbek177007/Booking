@@ -1,3 +1,4 @@
+#include "cartproductpreview.h"
 #include "cartwidget.h"
 #include "client.h"
 #include "ui_cartwidget.h"
@@ -17,6 +18,21 @@ CartWidget::~CartWidget()
 
 void CartWidget::updateCart()
 {
-    auto tempM = Client::instance()->cart->items();
-    qDebug() << tempM;
+    while (auto item = layout()->takeAt(0))
+    {
+        item->widget()->deleteLater();
+        delete item;
+    }
+    QList<ProductPreview> pp = Client::instance()->catalogue->productPreviews();
+
+    for (auto i : pp)
+    {
+        int quantity = Client::instance()->cart->items().value(i.id());
+        if (quantity > 0)
+        {
+        CartProductPreview* cpp = new CartProductPreview(i, quantity);
+        CartWidget::ui->verticalLayout->addWidget(cpp);
+        }
+    }
+
 }

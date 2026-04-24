@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
     connect(ui->catalogueButton, &QPushButton::clicked, this, &MainWindow::showCatalogue);
     connect(ui->loginButton, &QPushButton::clicked, this, &MainWindow::showLoginWidget);
+
 }
 
 MainWindow::~MainWindow()
@@ -52,6 +53,7 @@ void MainWindow::showLoginWidget()
         connect(cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
         connect(userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
         ui->loginButton->hide();
+        connect(cartButton, &QPushButton::clicked, cart, &CartWidget::updateCart);
     });
     loginw->open();
 

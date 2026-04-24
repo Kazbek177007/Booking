@@ -16,3 +16,11 @@ void Client::login(QString clientId)
     notifications.reset(rpc.acquire<NotificationsReplica>(clientId+"/notifications"));
 }
 
+ProductPreview Client::productPreview(int id) const
+{
+    auto tempList = catalogue->productPreviews();
+    for (auto i : tempList)
+        if(i.id() == id) return i;
+    return productPreview(-1);
+}
+

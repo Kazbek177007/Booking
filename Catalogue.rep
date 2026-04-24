@@ -7,4 +7,3 @@ class Catalogue
     PROP(QList<ProductPreview> productPreviews);
     SLOT(void registerClient(QString clientId));
 };
-

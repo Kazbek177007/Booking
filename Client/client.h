@@ -16,7 +16,7 @@ public:
     QSharedPointer<OrderHistoryReplica> orderHistory;
     QSharedPointer<NotificationsReplica> notifications;
     void login(QString clientId);
-
+    ProductPreview productPreview(int id) const;
 
 private:
     QRemoteObjectNode rpc;

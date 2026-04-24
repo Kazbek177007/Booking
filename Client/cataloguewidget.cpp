@@ -1,3 +1,4 @@
+#include "cartproductpreview.h"
 #include "cataloguewidget.h"
 #include "client.h"
 #include "productpreviewwidget.h"
@@ -31,7 +32,6 @@ void CatalogueWidget::updatePreviews(QList<ProductPreview> productPreviews)
         item->widget()->deleteLater();
         delete item;
     }
-    qDebug() << "Items from CatalogueWidget are deleted";
 
     for (ProductPreview pp : productPreviews)
     {

@@ -13,6 +13,7 @@ public:
 
     static Server* instance();
     QRemoteObjectHost* getrpc(){return rpc;}
+    ProductPreview productPreview(int id) const;
 
 private:
     QRemoteObjectHost* rpc;
