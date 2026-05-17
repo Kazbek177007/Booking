@@ -29,9 +29,23 @@
     </widget>
    </item>
    <item>
+    <widget class="QPushButton" name="reduceItemButton">
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QLabel" name="quantity">
      <property name="text">
       <string>Quantity</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="addItemButton">
+     <property name="text">
+      <string>+</string>
      </property>
     </widget>
    </item>

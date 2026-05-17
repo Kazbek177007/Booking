@@ -15,10 +15,15 @@ void Cart::addItem(int id)
 
 void Cart::removeItem(int id)
 {
-    qWarning() << Q_FUNC_INFO <<"not finished";
+    auto tempItems = items();
+    tempItems[id] -= 1;
+    if(tempItems[id] <= 0) tempItems.remove(id);
+    setItems(tempItems);
+    qDebug() << "Client with id" << clientId << "remove the item:" << id;
 }
 
 void Cart::clear()
 {
-    qWarning() << Q_FUNC_INFO <<"not finished";
+    setItems(QMap<int, int>());
+    qDebug() << "Client with id" << clientId << "cleared the cart";
 }

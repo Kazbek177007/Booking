@@ -53,7 +53,6 @@ void MainWindow::showLoginWidget()
         connect(cartButton, &QPushButton::clicked, this, &MainWindow::showCart);
         connect(userProfileButton, &QPushButton::clicked, this, &MainWindow::showUserProfile);
         ui->loginButton->hide();
-        connect(cartButton, &QPushButton::clicked, cart, &CartWidget::updateCart);
     });
     loginw->open();
 

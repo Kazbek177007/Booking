@@ -9,6 +9,11 @@ CartWidget::CartWidget(QWidget *parent)
 {
     ui->setupUi(this);
     connect(Client::instance()->cart.get(), &CartReplica::itemsChanged, this, &CartWidget::updateCart);
+    connect(ui->buyButton, &QPushButton::clicked,  []()
+            {
+                    Client::instance()->orderHistory->createOrder(Client::instance()->cart->items());
+                    Client::instance()->cart->clear();
+            });
 }
 
 CartWidget::~CartWidget()
@@ -18,21 +23,19 @@ CartWidget::~CartWidget()
 
 void CartWidget::updateCart()
 {
-    while (auto item = layout()->takeAt(0))
+    while (auto item = ui->itemsLayout->takeAt(0))
     {
         item->widget()->deleteLater();
         delete item;
     }
-    QList<ProductPreview> pp = Client::instance()->catalogue->productPreviews();
 
-    for (auto i : pp)
+    QMap<int, int> items = Client::instance()->cart->items();
+
+    for (auto [id, quantity] : items.asKeyValueRange())
     {
-        int quantity = Client::instance()->cart->items().value(i.id());
-        if (quantity > 0)
-        {
-        CartProductPreview* cpp = new CartProductPreview(i, quantity);
-        CartWidget::ui->verticalLayout->addWidget(cpp);
-        }
+        ProductPreview pp = Client::instance()->productPreview(id);
+        CartProductPreview* cpp = new CartProductPreview(pp, quantity);
+        ui->itemsLayout->addWidget(cpp);
     }
-
+    qDebug() << "Current cart" << items;
 }

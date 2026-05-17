@@ -1,3 +1,5 @@
+#include <QDateTime>
+
 class Cart
 {
     PROP(QMap<int, int> items);
@@ -15,10 +17,12 @@ class UserProfile
     PROP(QString phoneNumber);
 };
 
+POD Order(QMap<int, int> items, QDateTime dateTime)
+
 class OrderHistory
 {
-
-
+    PROP(QList<Order> orders)
+    SLOT(void createOrder(QMap<int, int> items))
 };
 
 

@@ -14,7 +14,8 @@ ProductPreviewWidget::ProductPreviewWidget(ProductPreview productPreview)
     ui->productPrice->setText(QString::number(productPreview.price()));
     qDebug() << productPreview;
     connect(ui->addProductButton, &QPushButton::clicked, [productPreview](){
-        Client::instance()->cart->addItem(productPreview.id());
+        if(auto cart = Client::instance()->cart)
+        cart->addItem(productPreview.id());
     });
 }
 

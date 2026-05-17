@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>CartWidget</class>
- <widget class="QWidget" name="CartWidget">
+ <class>OrderWidget</class>
+ <widget class="QWidget" name="OrderWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -15,18 +15,9 @@
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
-    <layout class="QVBoxLayout" name="itemsLayout"/>
-   </item>
-   <item>
-    <widget class="QPushButton" name="buyButton">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Buy</string>
+      <string>1</string>
      </property>
     </widget>
    </item>
