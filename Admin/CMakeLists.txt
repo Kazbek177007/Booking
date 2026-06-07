@@ -8,6 +8,7 @@ qt_standard_project_setup()
 qt_add_executable(Admin
     WIN32 MACOSX_BUNDLE
     main.cpp
+    admin.h admin.cpp
 )
 
 target_link_libraries(Admin
@@ -21,6 +22,12 @@ install(TARGETS Admin
     BUNDLE  DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
+
+qt6_add_repc_replicas(Admin
+  ../catalogue.rep
+  ../user.rep
+  ../admin.rep
 )
 
 qt_generate_deploy_app_script(

@@ -1,10 +1,9 @@
-#include "mainwindow.h"
-
+#include "admin.h"
 #include <QApplication>
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
-    QApplication a(argc, argv);
+    Admin a(argc, argv);
 
-    return QApplication::exec();
+    return Admin::exec();
 }
