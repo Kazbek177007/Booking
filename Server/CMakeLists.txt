@@ -21,6 +21,7 @@ add_executable(Server
   userprofile.h userprofile.cpp
   orderhistory.h orderhistory.cpp
   notifications.h notifications.cpp
+  listofproducts.h listofproducts.cpp
 )
 
 target_link_libraries(Server PUBLIC
@@ -35,12 +36,15 @@ install(TARGETS Server
 
 
 qt6_add_repc_sources(Server
+  ../shared.rep
   ../catalogue.rep
   ../user.rep
   ../admin.rep
+
 )
 
 
 target_include_directories(Server PRIVATE
     ${CMAKE_CURRENT_BINARY_DIR}
 )
+target_compile_definitions(Server PRIVATE SOURCE_BUILD)

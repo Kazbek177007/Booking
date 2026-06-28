@@ -42,6 +42,7 @@ install(TARGETS Client
 
 
 qt6_add_repc_replicas(Client
+  ../shared.rep
   ../catalogue.rep
   ../user.rep
 )

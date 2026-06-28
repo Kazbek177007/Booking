@@ -1,4 +1,9 @@
 #include <QtCore>
+#ifdef SOURCE_BUILD
+#include "rep_shared_source.h"
+#else
+#include "rep_shared_replica.h"
+#endif
 
 POD Product(ProductPreview preview, bool isPublished)
 
@@ -10,9 +15,8 @@ class ListOfProducts
     SLOT(void removeProduct(int id));
 };
 
-//POD Order(QMap<int, int> items, QDateTime dateTime)
 
-class ListOfOrders
+/*class ListOfOrders
 {
   PROP(QList<Order> orders);
-};
+};*/

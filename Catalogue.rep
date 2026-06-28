@@ -1,9 +1,15 @@
 #include <QtCore>
+#ifdef SOURCE_BUILD
+#include "rep_shared_source.h"
+#else
+#include "rep_shared_replica.h"
+#endif
 
-POD ProductPreview(int id, QString name, QByteArray icon, double price)
+//POD ProductPreview(int id, QString name, QByteArray icon, double price)
 
 class Catalogue
 {
     PROP(QList<ProductPreview> productPreviews);
     SLOT(void registerClient(QString clientId));
 };
+

@@ -25,6 +25,7 @@ install(TARGETS Admin
 )
 
 qt6_add_repc_replicas(Admin
+  ../shared.rep
   ../catalogue.rep
   ../user.rep
   ../admin.rep

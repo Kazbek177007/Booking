@@ -1,0 +1,4 @@
+#include <QtCore>
+
+POD ProductPreview(int id, QString name, QByteArray icon, double price)
+

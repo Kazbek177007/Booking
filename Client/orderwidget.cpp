@@ -16,11 +16,12 @@ OrderWidget::OrderWidget(Order order, QWidget *parent)
     for (int i = 0; i < items.count(); i++)
     {
         auto id = keys.at(i);
+        std::optional<ProductPreview> pp = Client::instance()->productPreview(id);
+        if(!pp) continue;
         model->insertRow(i);
-        ProductPreview pp = Client::instance()->productPreview(id);
-        model->setData(model->index(i,0), pp.name());
+        model->setData(model->index(i,0), pp.value().name());
         model->setData(model->index(i,1), items.value(id)); qDebug() << items.value(id); //qty
-        model->setData(model->index(i,2), pp.price() * items.value(id)); qDebug() << pp.price() * items.value(id); qDebug() << pp.price(); //sum
+        model->setData(model->index(i,2), pp.value().price() * items.value(id)); qDebug() << pp.value().price() * items.value(id); qDebug() << pp.value().price(); //sum
     }
     ui->tableView->setModel(model);
 

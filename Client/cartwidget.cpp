@@ -33,9 +33,10 @@ void CartWidget::updateCart()
 
     for (auto [id, quantity] : items.asKeyValueRange())
     {
-        ProductPreview pp = Client::instance()->productPreview(id);
-        CartProductPreview* cpp = new CartProductPreview(pp, quantity);
-        ui->itemsLayout->addWidget(cpp);
+        std::optional<ProductPreview> pp = Client::instance()->productPreview(id);
+        if(!pp) continue;
+        CartProductPreview* cpp = new CartProductPreview(pp.value(), quantity);
+        ui->itemsLayout->addWidget(cpp);     
     }
     qDebug() << "Current cart" << items;
 }
