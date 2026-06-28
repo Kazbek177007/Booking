@@ -14,9 +14,3 @@ class ListOfProducts
     SLOT(void changeProductInfo(Product));
     SLOT(void removeProduct(int id));
 };
-
-
-/*class ListOfOrders
-{
-  PROP(QList<Order> orders);
-};*/

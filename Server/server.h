@@ -1,6 +1,7 @@
 #pragma once
 
 #include "catalogue.h"
+#include "listofproducts.h"
 #include "usermanager.h"
 #include <QCoreApplication>
 #include <QObject>
@@ -19,6 +20,7 @@ private:
     QRemoteObjectHost* rpc;
     UserManager* userManager;
     Catalogue* catalogue;
+    ListOfProducts* listOfProducts;
 
 signals:
     void userConnected(QString userId);

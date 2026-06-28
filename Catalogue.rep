@@ -5,8 +5,6 @@
 #include "rep_shared_replica.h"
 #endif
 
-//POD ProductPreview(int id, QString name, QByteArray icon, double price)
-
 class Catalogue
 {
     PROP(QList<ProductPreview> productPreviews);
