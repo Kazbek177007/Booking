@@ -1,9 +1,12 @@
 #include "admin.h"
-#include <QApplication>
+#include "adminmainwindow.h"
 
 int main(int argc, char* argv[])
 {
     Admin a(argc, argv);
+
+    AdminMainWindow w;
+    w.show();
 
     return Admin::exec();
 }

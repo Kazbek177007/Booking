@@ -5,7 +5,7 @@ ListOfProducts::ListOfProducts(QObject* parent) : ListOfProductsSimpleSource(par
 
 void ListOfProducts::addProduct()
 {
-    qDebug() << "add Product";
+    qDebug() << "add Product()";
 }
 
 void ListOfProducts::changeProductInfo(Product)

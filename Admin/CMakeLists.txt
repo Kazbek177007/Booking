@@ -16,6 +16,10 @@ qt_add_executable(Admin
     WIN32 MACOSX_BUNDLE
     main.cpp
     admin.h admin.cpp
+    adminmainwindow.h adminmainwindow.cpp adminmainwindow.ui
+    productsmanagerwidget.h productsmanagerwidget.cpp productsmanagerwidget.ui
+    adminproductwidget.h adminproductwidget.cpp adminproductwidget.ui
+    producteditdialog.h producteditdialog.cpp producteditdialog.ui
 )
 
 target_link_libraries(Admin
@@ -33,7 +37,7 @@ install(TARGETS Admin
 
 qt6_add_repc_replicas(Admin
   ../shared.rep
-  ../catalogue.rep
+  ../Catalogue.rep
   ../user.rep
   ../admin.rep
 )
