@@ -37,7 +37,7 @@ void ProductsManagerWidget::updateProducts(QList<Product> products)
         AdminProductWidget* apw = new AdminProductWidget(product);
         productListLayout->addWidget(apw);
     }
-    qDebug() << "[[Product List is updated"
+    qDebug() << "Product List is updated";
 }
 
 void ProductsManagerWidget::addProductClicked()

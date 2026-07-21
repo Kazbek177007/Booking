@@ -10,7 +10,7 @@ public:
 
 private:
     void addProduct() override;
-    void changeProductInfo(Product) override;
+    void changeProductInfo(Product p) override;
     void removeProduct(int id) override;
 
 signals:

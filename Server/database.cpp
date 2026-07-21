@@ -1,5 +1,5 @@
 #include "database.h"
-
+#include <QSqlError>
 #include <QSqlQuery>
 
 Database& Database::instance()
@@ -25,6 +25,49 @@ bool Database::open(QString filepath)
 bool Database::isOpened() const
 {
     return db.isOpen();
+}
+
+int Database::addProduct(const Product& product)
+{
+    QSqlQuery query(db);
+    query.prepare ("INSERT INTO products (name, icon, price)"
+                  "VALUES (?, ?, ?)");
+
+    query.bindValue(0, product.preview().name());
+    query.bindValue(1, product.preview().icon());
+    query.bindValue(2, product.preview().price());
+
+    if(!query.exec())
+    {
+        qWarning() << "addProduct() hasn't started";
+        return -1;
+    }
+    return query.lastInsertId().toInt();
+}
+
+void Database::updateProduct(const Product& product)
+{
+    QSqlQuery query(db);
+    query.prepare("UPDATE products SET name = ?, icon = ?, price = ?, isPublished = ?  WHERE id = ?");
+
+    query.bindValue(0, product.preview().name());
+    query.bindValue(1, product.preview().icon());
+    query.bindValue(2, product.preview().price());
+    query.bindValue(3, product.isPublished());
+    query.bindValue(4, product.preview().id());
+
+
+    if(!query.exec()) qWarning() << "updateProduct() hasn't started" << query.lastError().text();
+}
+
+void Database::removeProduct(int id)
+{
+    QSqlQuery query(db);
+    query.prepare("DELETE FROM products WHERE id = ?");
+
+    query.bindValue(0, id);
+
+    if(!query.exec()) qWarning() << "Ошибка удаления:" << query.lastError().text();
 }
 
 void Database::createTables()

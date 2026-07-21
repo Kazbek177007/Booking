@@ -1,3 +1,4 @@
+#pragma once
 #include <QWidget>
 #include <QScrollArea>
 #include <QVBoxLayout>
@@ -23,4 +24,3 @@ private:
     Ui::ProductsManagerWidget* ui;
     QVBoxLayout* productListLayout;
 };
-

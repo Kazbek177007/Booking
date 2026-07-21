@@ -9,10 +9,10 @@ class Database
 {
 public:
     static Database& instance();
-    bool open(QString filepath = "Booking.db");
+    [[nodiscard]] bool open(QString filepath = "Booking.db");
     bool isOpened() const;
     QList<Product> loadProducts() const;
-    void addProduct(const Product& product);
+    int addProduct(const Product& product);
     void updateProduct(const Product& product);
     void removeProduct(int id);
     QList<Order> loadOrders() const;
