@@ -17,7 +17,7 @@ private slots:
     void showProductsManager();
 
 private:
-    Ui::AdminMainWindow *ui;
+    Ui::AdminMainWindow* ui;
     ProductsManagerWidget* productsManager;
 };
 

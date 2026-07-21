@@ -9,7 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects)
+find_package(Qt6 REQUIRED COMPONENTS Core RemoteObjects Sql)
 
 add_executable(Server
   main.cpp
@@ -22,11 +22,13 @@ add_executable(Server
   orderhistory.h orderhistory.cpp
   notifications.h notifications.cpp
   listofproducts.h listofproducts.cpp
+  database.h database.cpp
 )
 
 target_link_libraries(Server PUBLIC
     Qt::Core
     Qt::RemoteObjects
+    Qt::Sql
 )
 
 install(TARGETS Server
