@@ -10,7 +10,7 @@ class Server : public QCoreApplication
 {
     Q_OBJECT
 public:
-    Server(int &argc, char **argv);
+    Server(int& argc, char** argv);
 
     static Server* instance();
     QRemoteObjectHost* getrpc(){return rpc;}

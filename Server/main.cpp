@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[])
 {
-    if(!Database::instance().open()) return 1;
     Server s(argc, argv);
+    if(!Database::instance().open()) return 1;
     return s.exec();
 }

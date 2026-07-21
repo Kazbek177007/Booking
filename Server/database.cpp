@@ -17,8 +17,8 @@ bool Database::open(QString filepath)
         qWarning() << "Database is not opened";
         return false;
     }
-    createTables();
     qDebug() << "Database is opened";
+    createTables();
     return true;
 }
 
@@ -79,12 +79,12 @@ void Database::createTables()
           "name TEXT NOT NULL,"
           "icon BLOB,"
           "price REAL NOT NULL DEFAULT 0,"
-          "isPublished INTEGER NOT NULL DEFAULT 0"))
-        qWarning() << "Table products are not created";
+          "isPublished INTEGER NOT NULL DEFAULT 0 )"))
+        qWarning() << "Table products are not created" << query.lastError().text();
     if(!query.exec("CREATE TABLE IF NOT EXISTS orders ("
                     "id INTEGER PRIMARY KEY AUTOINCREMENT,"
                     "userId TEXT NOT NULL,"
                     "items BLOB NOT NULL,"
-                    "dateTime TEXT NOT NULL"))
-        qWarning() << "Table orders are not created";
+                    "dateTime TEXT NOT NULL )"))
+        qWarning() << "Table orders are not created" << query.lastError().text();
 }
